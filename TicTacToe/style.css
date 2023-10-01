@@ -1,0 +1,144 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    /* background-image: url(./assets/gradient-bg.png); */
+    background-color: cadetblue;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+    position: relative;
+}
+
+.gameInfo{
+    color: white;
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 1rem;
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 0.5rem 3rem;
+    text-align: center;
+}
+
+.tikTacToe{
+    width: 90%;
+    max-width: 20rem;
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-rows: repeat(3,1fr); */
+    aspect-ratio: 1/1;
+}
+
+.box{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    font-size: 3rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1, .box2 ,.box4 , .box5{
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.box3, .box6{
+    border-bottom: 2px solid white;
+}
+
+.box7, .box8{
+    border-right: 2px solid white;
+}
+
+.btn{
+    color: white;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem 2rem;
+    background-color: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 1rem;
+}
+
+.win{
+    background-color: greenyellow;
+}
+
+.btn.active{
+    display: flex;
+}
+
+.card{
+    background-color: yellow;
+    border: 2px dashed red;
+    position: absolute;
+    margin: 0 auto;
+    display: none;
+}
+
+.winner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    animation-name: win;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    /* animation-delay: 1s; */
+    animation-direction: normal;
+}
+
+.winner p{
+    font-size: 40px;
+    color: purple;
+    text-align: center;
+
+}
+
+@keyframes win {
+    0%{
+        width: 0px;
+        background-color: yellow;
+    }
+    30%{
+        width: 30%;
+        background-color: yellow;
+    }
+    60%{
+        width: 60%;
+        background-color: yellow;
+    }
+    90%{
+        width: 90%;
+        background-color: yellow;
+    }
+    100%{
+        width: 100%;
+        background-color: yellow;
+    }
+}
